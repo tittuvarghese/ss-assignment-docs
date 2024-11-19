@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  kafka:
+    image: apache/kafka:latest
+    container_name: kafka
+    environment:
+      - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
+      - KAFKA_LISTENER_NAME=PLAINTEXT
+      - KAFKA_LISTENER_PORT=9092
+      - KAFKA_LISTENER_HOST=0.0.0.0
+      - KAFKA_LISTENER_INTERFACES=0.0.0.0
+      - KAFKA_LISTENER_NAMES=PLAINTEXT
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092  # Advertised listener for clients to connect to
+      - KAFKA_KRAFT_MODE=true  # Enable KRaft mode (no ZooKeeper)
+      - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
+      - KAFKA_LOG_DIRS=/var/lib/kafka/data
+      - KAFKA_LOG_RETENTION_HOURS=168
+    ports:
+      - "9092:9092"
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    networks:
+      - kafka-net
+    command:
+      - "bash"
+      - "-c"
+      - |
+        # Wait until Kafka starts up
+        echo "Waiting for Kafka to start..."
+        # Give Kafka time to start
+        sleep 10
+        echo "Kafka started."
+
+        # Create topics if they do not exist
+        # kafka-topics --bootstrap-server localhost:9092 --create --topic topic1 --partitions 3 --replication-factor 1 || echo "Topic 'topic1' already exists."
+        echo "Topics creation complete. Kafka will now continue running."
+
+        # Ensure Kafka continues to run by using the official entrypoint
+        exec /etc/kafka/docker/run
+    restart: always
+
+volumes:
+  kafka-data:
+    driver: local
+
+networks:
+  kafka-net:
+    driver: bridge
