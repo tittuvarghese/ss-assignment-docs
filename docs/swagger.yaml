@@ -1,0 +1,1121 @@
+openapi: 3.0.3
+info:
+  title: ScalableServices
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: localhost
+paths:
+  /api/v1/gateway/status:
+    get:
+      summary: Gateway - Status
+      description: Gateway - Status
+      operationId: gatewayStatus
+      responses:
+        '200':
+          description: Gateway - Status
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '54'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 11:21:13 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Server is running smoothly
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - Status:
+                  value:
+                    message: Server is running smoothly
+                    status: true
+  /api/v1/customerservice/register:
+    post:
+      summary: Gateway  - Customer Service - Register
+      description: Gateway  - Customer Service - Register
+      operationId: gatewayCustomerServiceRegister
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstname:
+                  type: string
+                  example: SellerA
+                lastname:
+                  type: string
+                  example: Axb
+                password:
+                  type: string
+                  example: password
+                type:
+                  type: string
+                  example: seller
+                username:
+                  type: string
+                  example: sellera
+            examples:
+              Gateway  - Customer Service - Register:
+                value:
+                  firstname: SellerA
+                  lastname: Axb
+                  password: password
+                  type: seller
+                  username: sellera
+      responses:
+        '200':
+          description: Gateway  - Customer Service - Register
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '56'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 11:22:12 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User registered successfully
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway  - Customer Service - Register:
+                  value:
+                    message: User registered successfully
+                    status: true
+      security:
+        - bearerAuth: []
+  /api/v1/customerservice/login:
+    post:
+      summary: Gateway - Customer Service - Login
+      description: Gateway - Customer Service - Login
+      operationId: gatewayCustomerServiceLogin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: password
+                username:
+                  type: string
+                  example: seller
+            examples:
+              Gateway - Customer Service - Login:
+                value:
+                  password: password
+                  username: seller
+      responses:
+        '200':
+          description: Gateway - Customer Service - Login
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '394'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 11:22:34 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Successfully authenticated the user
+                  status:
+                    type: boolean
+                    example: true
+                  token:
+                    type: string
+                    example: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJpZCI6ImRmNDE5MWM5LWQ5N2UtNGM4Mi1hNWM2LWE3NDFlY2MwZGM0MyIsInVzZXJuYW1lIjoic2VsbGVyIiwiZmlyc3RuYW1lIjoiU2VsbGVyIiwibGFzdG5hbWUiOiJBeGIiLCJ0eXBlIjoic2VsbGVyIn0sImlzcyI6ImVjb21tZXJjZS1hcHBsaWNhdGlvbiIsImV4cCI6MTczMTQ5Njk1NH0.saEVyNMVUwgm6rA7MdS7J-K0MLR4Ms5zFLzE7KZ07oI
+              examples:
+                Gateway - Customer Service - Login:
+                  value:
+                    message: Successfully authenticated the user
+                    status: true
+                    token: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJpZCI6ImRmNDE5MWM5LWQ5N2UtNGM4Mi1hNWM2LWE3NDFlY2MwZGM0MyIsInVzZXJuYW1lIjoic2VsbGVyIiwiZmlyc3RuYW1lIjoiU2VsbGVyIiwibGFzdG5hbWUiOiJBeGIiLCJ0eXBlIjoic2VsbGVyIn0sImlzcyI6ImVjb21tZXJjZS1hcHBsaWNhdGlvbiIsImV4cCI6MTczMTQ5Njk1NH0.saEVyNMVUwgm6rA7MdS7J-K0MLR4Ms5zFLzE7KZ07oI
+      security:
+        - bearerAuth: []
+  /api/v1/customerservice/profile:
+    get:
+      summary: Gateway - Customer Service - Profile
+      description: Gateway - Customer Service - Profile
+      operationId: gatewayCustomerServiceProfile
+      responses:
+        '200':
+          description: Gateway - Customer Service - Profile
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '202'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 11:22:47 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      firstname:
+                        type: string
+                        example: Seller
+                      lastname:
+                        type: string
+                        example: Axb
+                      type:
+                        type: string
+                        example: seller
+                      userid:
+                        type: string
+                        example: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                      username:
+                        type: string
+                        example: seller
+                  message:
+                    type: string
+                    example: Successfully retrieved the user information
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - Customer Service - Profile:
+                  value:
+                    data:
+                      firstname: Seller
+                      lastname: Axb
+                      type: seller
+                      userid: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                      username: seller
+                    message: Successfully retrieved the user information
+                    status: true
+      security:
+        - bearerAuth: []
+  /api/v1/productservice/create:
+    post:
+      summary: Gateway - Product Service - Create Product
+      description: Gateway - Product Service - Create Product
+      operationId: gatewayProductServiceCreateProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                base_delivery_timelines:
+                  type: number
+                  example: 5
+                category:
+                  type: string
+                  example: Audio
+                height:
+                  type: number
+                  example: 7.5
+                image_urls:
+                  type: array
+                  items:
+                    type: string
+                    example: https://example.com/headphones1.jpg
+                  example:
+                    - https://example.com/headphones1.jpg
+                    - https://example.com/headphones2.jpg
+                name:
+                  type: string
+                  example: Wireless Headphones
+                price:
+                  type: number
+                  example: 149.99
+                quantity:
+                  type: number
+                  example: 50
+                shipping_base_price:
+                  type: number
+                  example: 4.75
+                type:
+                  type: string
+                  example: Electronics
+                weight:
+                  type: number
+                  example: 0.35
+                width:
+                  type: number
+                  example: 8.5
+            examples:
+              Gateway - Product Service - Create Product:
+                value:
+                  base_delivery_timelines: 5
+                  category: Audio
+                  height: 7.5
+                  image_urls:
+                    - https://example.com/headphones1.jpg
+                    - https://example.com/headphones2.jpg
+                  name: Wireless Headphones
+                  price: 149.99
+                  quantity: 50
+                  shipping_base_price: 4.75
+                  type: Electronics
+                  weight: 0.35
+                  width: 8.5
+      responses:
+        '200':
+          description: Gateway - Product Service - Create Product
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '68'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 11:23:29 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Successfully created the product listing
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - Product Service - Create Product:
+                  value:
+                    message: Successfully created the product listing
+                    status: true
+      security:
+        - bearerAuth: []
+  /api/v1/productservice/product/{productId}:
+    get:
+      summary: Gateway - Product Service - Get Product
+      description: Gateway - Product Service - Get Product
+      operationId: gatewayProductServiceGetProduct
+      responses:
+        '200':
+          description: Gateway - Product Service - Get Product
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '441'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 11:23:42 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      base_delivery_timelines:
+                        type: number
+                        example: 7
+                      category:
+                        type: string
+                        example: Gadgets
+                      image_urls:
+                        type: array
+                        items:
+                          type: string
+                          example: https://example.com/image1.jpg
+                        example:
+                          - https://example.com/image1.jpg
+                          - https://example.com/image2.jpg
+                      name:
+                        type: string
+                        example: Example Product
+                      price:
+                        type: number
+                        example: 99.99
+                      product_id:
+                        type: string
+                        example: 456e340a-9018-463e-bc8e-c7c0d539850d
+                      quantity:
+                        type: number
+                        example: 10
+                      seller_id:
+                        type: string
+                        example: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                      shipping_base_price:
+                        type: number
+                        example: 5.5
+                      size:
+                        type: object
+                        properties:
+                          height:
+                            type: number
+                            example: 20.75
+                      type:
+                        type: string
+                        example: Electronics
+                      weight:
+                        type: number
+                        example: 2.5
+                  message:
+                    type: string
+                    example: Successfully retrieved the product
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - Product Service - Get Product:
+                  value:
+                    data:
+                      base_delivery_timelines: 7
+                      category: Gadgets
+                      image_urls:
+                        - https://example.com/image1.jpg
+                        - https://example.com/image2.jpg
+                      name: Example Product
+                      price: 99.99
+                      product_id: 456e340a-9018-463e-bc8e-c7c0d539850d
+                      quantity: 10
+                      seller_id: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                      shipping_base_price: 5.5
+                      size:
+                        height: 20.75
+                      type: Electronics
+                      weight: 2.5
+                    message: Successfully retrieved the product
+                    status: true
+      security:
+        - bearerAuth: []
+    post:
+      summary: Gateway - Product Service - Update Product
+      description: Gateway - Product Service - Update Product
+      operationId: gatewayProductServiceUpdateProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price:
+                  type: number
+                  example: 189.99
+                quantity:
+                  type: number
+                  example: 42
+            examples:
+              Gateway - Product Service - Update Product:
+                value:
+                  price: 189.99
+                  quantity: 42
+      responses:
+        '200':
+          description: Gateway - Product Service - Update Product
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '68'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 14:18:02 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Successfully updated the product listing
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - Product Service - Update Product:
+                  value:
+                    message: Successfully updated the product listing
+                    status: true
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: productId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: f6a396e0-365f-4f72-8a9d-e5a94bbcd823
+  /api/v1/productservice/products:
+    get:
+      summary: Gateway - Product Service - Get Products
+      description: Gateway - Product Service - Get Products
+      operationId: gatewayProductServiceGetProducts
+      responses:
+        '200':
+          description: Gateway - Product Service - Get Products
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '1213'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 11:23:49 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        base_delivery_timelines:
+                          type: number
+                          example: 5
+                        category:
+                          type: string
+                          example: Audio
+                        image_urls:
+                          type: array
+                          items:
+                            type: string
+                            example: https://example.com/headphones1.jpg
+                          example:
+                            - https://example.com/headphones1.jpg
+                            - https://example.com/headphones2.jpg
+                        name:
+                          type: string
+                          example: Wireless Headphones
+                        price:
+                          type: number
+                          example: 149.99
+                        product_id:
+                          type: string
+                          example: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                        quantity:
+                          type: number
+                          example: 50
+                        seller_id:
+                          type: string
+                          example: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                        shipping_base_price:
+                          type: number
+                          example: 4.75
+                        size:
+                          type: object
+                          properties:
+                            height:
+                              type: number
+                              example: 7.5
+                        type:
+                          type: string
+                          example: Electronics
+                        weight:
+                          type: number
+                          example: 0.35
+                    example:
+                      - base_delivery_timelines: 5
+                        category: Audio
+                        image_urls:
+                          - https://example.com/headphones1.jpg
+                          - https://example.com/headphones2.jpg
+                        name: Wireless Headphones
+                        price: 149.99
+                        product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                        quantity: 50
+                        seller_id: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                        shipping_base_price: 4.75
+                        size:
+                          height: 7.5
+                        type: Electronics
+                        weight: 0.35
+                      - base_delivery_timelines: 7
+                        category: Gadgets
+                        image_urls:
+                          - https://example.com/image1.jpg
+                          - https://example.com/image2.jpg
+                        name: Example Product
+                        price: 99.99
+                        product_id: 456e340a-9018-463e-bc8e-c7c0d539850d
+                        quantity: 10
+                        seller_id: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                        shipping_base_price: 5.5
+                        size:
+                          height: 20.75
+                        type: Electronics
+                        weight: 2.5
+                      - base_delivery_timelines: 5
+                        category: Audio
+                        image_urls:
+                          - https://example.com/headphones1.jpg
+                          - https://example.com/headphones2.jpg
+                        name: Wireless Headphones
+                        price: 149.99
+                        product_id: f6a396e0-365f-4f72-8a9d-e5a94bbcd823
+                        quantity: 50
+                        seller_id: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                        shipping_base_price: 4.75
+                        size:
+                          height: 7.5
+                        type: Electronics
+                        weight: 0.35
+                  message:
+                    type: string
+                    example: Successfully retrieved the product
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - Product Service - Get Products:
+                  value:
+                    data:
+                      - base_delivery_timelines: 5
+                        category: Audio
+                        image_urls:
+                          - https://example.com/headphones1.jpg
+                          - https://example.com/headphones2.jpg
+                        name: Wireless Headphones
+                        price: 149.99
+                        product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                        quantity: 50
+                        seller_id: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                        shipping_base_price: 4.75
+                        size:
+                          height: 7.5
+                        type: Electronics
+                        weight: 0.35
+                      - base_delivery_timelines: 7
+                        category: Gadgets
+                        image_urls:
+                          - https://example.com/image1.jpg
+                          - https://example.com/image2.jpg
+                        name: Example Product
+                        price: 99.99
+                        product_id: 456e340a-9018-463e-bc8e-c7c0d539850d
+                        quantity: 10
+                        seller_id: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                        shipping_base_price: 5.5
+                        size:
+                          height: 20.75
+                        type: Electronics
+                        weight: 2.5
+                      - base_delivery_timelines: 5
+                        category: Audio
+                        image_urls:
+                          - https://example.com/headphones1.jpg
+                          - https://example.com/headphones2.jpg
+                        name: Wireless Headphones
+                        price: 149.99
+                        product_id: f6a396e0-365f-4f72-8a9d-e5a94bbcd823
+                        quantity: 50
+                        seller_id: df4191c9-d97e-4c82-a5c6-a741ecc0dc43
+                        shipping_base_price: 4.75
+                        size:
+                          height: 7.5
+                        type: Electronics
+                        weight: 0.35
+                    message: Successfully retrieved the product
+                    status: true
+      security:
+        - bearerAuth: []
+  /api/v1/oms/order:
+    post:
+      summary: Gateway - OMS - Create Order
+      description: Gateway - OMS - Create Order
+      operationId: gatewayOmsCreateOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: object
+                  properties:
+                    address_line_1:
+                      type: string
+                      example: address_line_1
+                    address_line_2:
+                      type: string
+                      example: address_line_2
+                    city:
+                      type: string
+                      example: Hyderabad
+                    country:
+                      type: string
+                      example: IN
+                    state:
+                      type: string
+                      example: Telangana
+                    zip:
+                      type: string
+                      example: '500075'
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      price:
+                        type: number
+                        example: 149.99
+                      product_id:
+                        type: string
+                        example: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                      quantity:
+                        type: number
+                        example: 1
+                  example:
+                    - price: 149.99
+                      product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                      quantity: 1
+                phone:
+                  type: string
+                  example: '8285013889'
+            examples:
+              Gateway - OMS - Create Order:
+                value:
+                  address:
+                    address_line_1: address_line_1
+                    address_line_2: address_line_2
+                    city: Hyderabad
+                    country: IN
+                    state: Telangana
+                    zip: '500075'
+                  items:
+                    - price: 149.99
+                      product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                      quantity: 1
+                  phone: '8285013889'
+      responses:
+        '200':
+          description: Gateway - OMS - Create Order
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '68'
+            Date:
+              schema:
+                type: string
+                example: Tue, 12 Nov 2024 15:02:38 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Successfully created the product listing
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - OMS - Create Order:
+                  value:
+                    message: Successfully created the product listing
+                    status: true
+      security:
+        - bearerAuth: []
+  /api/v1/oms/orders:
+    get:
+      summary: Gateway - OMS - Get Orders
+      description: Gateway - OMS - Get Orders
+      operationId: gatewayOmsGetOrders
+      responses:
+        '200':
+          description: Gateway - OMS - Get Orders
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '1587'
+            Date:
+              schema:
+                type: string
+                example: Wed, 13 Nov 2024 19:35:20 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Address:
+                          type: object
+                          properties:
+                            AddressLine1:
+                              type: string
+                              example: address_line_1
+                            AddressLine2:
+                              type: string
+                              example: address_line_2
+                            City:
+                              type: string
+                              example: Hyderabad
+                            Country:
+                              type: string
+                              example: IN
+                            State:
+                              type: string
+                              example: Telangana
+                            Zip:
+                              type: string
+                              example: '500075'
+                        Phone:
+                          type: string
+                          example: '8285013889'
+                        items:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              price:
+                                type: number
+                                example: 149.99
+                              product_id:
+                                type: string
+                                example: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                              quantity:
+                                type: number
+                                example: 1
+                          example:
+                            - price: 149.99
+                              product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                              quantity: 1
+                        order_id:
+                          type: string
+                          example: 257831ef-bb66-49d7-af49-a226060d7291
+                    example:
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: 257831ef-bb66-49d7-af49-a226060d7291
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: 37975a56-4414-44ec-b721-07971bc004a6
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: e95d351f-6882-495a-bfb7-f056d0b98aa4
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: 63faaa88-b92a-4ef2-83da-9dc6245bdc5b
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: 5d7de47f-7e1f-4781-8f42-9b8ddfa81378
+                  message:
+                    type: string
+                    example: ''
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - OMS - Get Orders:
+                  value:
+                    data:
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: 257831ef-bb66-49d7-af49-a226060d7291
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: 37975a56-4414-44ec-b721-07971bc004a6
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: e95d351f-6882-495a-bfb7-f056d0b98aa4
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: 63faaa88-b92a-4ef2-83da-9dc6245bdc5b
+                      - Address:
+                          AddressLine1: address_line_1
+                          AddressLine2: address_line_2
+                          City: Hyderabad
+                          Country: IN
+                          State: Telangana
+                          Zip: '500075'
+                        Phone: '8285013889'
+                        items:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                        order_id: 5d7de47f-7e1f-4781-8f42-9b8ddfa81378
+                    message: ''
+                    status: true
+      security:
+        - bearerAuth: []
+  /api/v1/oms/order/{orderId}:
+    get:
+      summary: Gateway - OMS - Single Order
+      description: Gateway - OMS - Single Order
+      operationId: gatewayOmsSingleOrder
+      responses:
+        '200':
+          description: Gateway - OMS - Single Order
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '377'
+            Date:
+              schema:
+                type: string
+                example: Thu, 14 Nov 2024 14:04:10 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      Address:
+                        type: object
+                        properties:
+                          AddressLine1:
+                            type: string
+                            example: address_line_1
+                          AddressLine2:
+                            type: string
+                            example: address_line_2
+                          City:
+                            type: string
+                            example: Hyderabad
+                          Country:
+                            type: string
+                            example: IN
+                          State:
+                            type: string
+                            example: Telangana
+                          Zip:
+                            type: string
+                            example: '500075'
+                      Phone:
+                        type: string
+                        example: '8285013889'
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            price:
+                              type: number
+                              example: 149.99
+                            product_id:
+                              type: string
+                              example: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity:
+                              type: number
+                              example: 1
+                        example:
+                          - price: 149.99
+                            product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                            quantity: 1
+                      order_id:
+                        type: string
+                        example: 6dba955a-5691-45ec-ba80-80e9a273d804
+                  message:
+                    type: string
+                    example: Successfully retrieved the order
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - OMS - Single Order:
+                  value:
+                    data:
+                      Address:
+                        AddressLine1: address_line_1
+                        AddressLine2: address_line_2
+                        City: Hyderabad
+                        Country: IN
+                        State: Telangana
+                        Zip: '500075'
+                      Phone: '8285013889'
+                      items:
+                        - price: 149.99
+                          product_id: b34da07e-9081-4a8d-80c2-12aea0cd6e7b
+                          quantity: 1
+                      order_id: 6dba955a-5691-45ec-ba80-80e9a273d804
+                    message: Successfully retrieved the order
+                    status: true
+      security:
+        - bearerAuth: []
+    post:
+      summary: Gateway - OMS - Order Status Update
+      description: Gateway - OMS - Order Status Update
+      operationId: gatewayOmsOrderStatusUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  example: Shipped
+            examples:
+              Gateway - OMS - Order Status Update:
+                value:
+                  status: Shipped
+      responses:
+        '200':
+          description: Gateway - OMS - Order Status Update
+          headers:
+            Content-Length:
+              schema:
+                type: string
+                example: '65'
+            Date:
+              schema:
+                type: string
+                example: Thu, 14 Nov 2024 19:02:52 GMT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Successfully updated the order status
+                  status:
+                    type: boolean
+                    example: true
+              examples:
+                Gateway - OMS - Order Status Update:
+                  value:
+                    message: Successfully updated the order status
+                    status: true
+      security:
+        - bearerAuth: []
+    parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:a
+          type: string
+          example: 6dba955a-5691-45ec-ba80-80e9a273d804
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags: []
