@@ -1,0 +1,1022 @@
+{
+	"info": {
+		"_postman_id": "cfbcee85-06f0-4d06-9ac1-0053601a55f2",
+		"name": "ScalableServices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37894449"
+	},
+	"item": [
+		{
+			"name": "Gateway - Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/gateway/status",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"gateway",
+						"status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/gateway/status",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gateway",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 11:21:13 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Server is running smoothly\",\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Gateway  - Customer Service - Register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJpZCI6ImRmNDE5MWM5LWQ5N2UtNGM4Mi1hNWM2LWE3NDFlY2MwZGM0MyIsInVzZXJuYW1lIjoic2VsbGVyIiwiZmlyc3RuYW1lIjoiU2VsbGVyIiwibGFzdG5hbWUiOiJBeGIiLCJ0eXBlIjoic2VsbGVyIn0sImlzcyI6ImVjb21tZXJjZS1hcHBsaWNhdGlvbiIsImV4cCI6MTczNTU1MjgxOH0.a8yMoFJzL240mfF1lnRZx3yLVfe7DOILTcvtnv2IN-w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"Seller\",\n    \"lastname\": \"Axb\",\n    \"username\": \"seller\",\n    \"password\": \"password\",\n    \"type\": \"seller\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/customerservice/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customerservice",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway  - Customer Service - Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"SellerA\",\n    \"lastname\": \"Axb\",\n    \"username\": \"sellera\",\n    \"password\": \"password\",\n    \"type\": \"seller\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/customerservice/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customerservice",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 11:22:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\",\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Gateway - Customer Service - Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJpZCI6ImRmNDE5MWM5LWQ5N2UtNGM4Mi1hNWM2LWE3NDFlY2MwZGM0MyIsInVzZXJuYW1lIjoic2VsbGVyIiwiZmlyc3RuYW1lIjoiU2VsbGVyIiwibGFzdG5hbWUiOiJBeGIiLCJ0eXBlIjoic2VsbGVyIn0sImlzcyI6ImVjb21tZXJjZS1hcHBsaWNhdGlvbiIsImV4cCI6MTczNTU1MjgxOH0.a8yMoFJzL240mfF1lnRZx3yLVfe7DOILTcvtnv2IN-w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"seller\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/customerservice/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customerservice",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - Customer Service - Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"seller\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/customerservice/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customerservice",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 11:22:34 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "394"
+						}
+					],
+					"cookie": [],
+					"body": "\n{\n    \"message\": \"Successfully authenticated the user\",\n    \"status\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJpZCI6ImRmNDE5MWM5LWQ5N2UtNGM4Mi1hNWM2LWE3NDFlY2MwZGM0MyIsInVzZXJuYW1lIjoic2VsbGVyIiwiZmlyc3RuYW1lIjoiU2VsbGVyIiwibGFzdG5hbWUiOiJBeGIiLCJ0eXBlIjoic2VsbGVyIn0sImlzcyI6ImVjb21tZXJjZS1hcHBsaWNhdGlvbiIsImV4cCI6MTczMTQ5Njk1NH0.saEVyNMVUwgm6rA7MdS7J-K0MLR4Ms5zFLzE7KZ07oI\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Gateway - Customer Service - Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/customerservice/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customerservice",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - Customer Service - Profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/customerservice/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customerservice",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 11:22:47 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "202"
+						}
+					],
+					"cookie": [],
+					"body": "\n{\n    \"data\": {\n        \"userid\": \"df4191c9-d97e-4c82-a5c6-a741ecc0dc43\",\n        \"username\": \"seller\",\n        \"firstname\": \"Seller\",\n        \"lastname\": \"Axb\",\n        \"type\": \"seller\"\n    },\n    \"message\": \"Successfully retrieved the user information\",\n    \"status\": true\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Gateway - Product Service - Create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"name\": \"Wireless Headphones\",\n    \"quantity\": 50,\n    \"type\": \"Electronics\",\n    \"category\": \"Audio\",\n    \"image_urls\": [\n        \"https://example.com/headphones1.jpg\",\n        \"https://example.com/headphones2.jpg\"\n    ],\n    \"price\": 149.99,\n    \"width\": 8.5,\n    \"height\": 7.5,\n    \"weight\": 0.35,\n    \"shipping_base_price\": 4.75,\n    \"base_delivery_timelines\": 5\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/productservice/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"productservice",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - Product Service - Create Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Wireless Headphones\",\n    \"quantity\": 50,\n    \"type\": \"Electronics\",\n    \"category\": \"Audio\",\n    \"image_urls\": [\n        \"https://example.com/headphones1.jpg\",\n        \"https://example.com/headphones2.jpg\"\n    ],\n    \"price\": 149.99,\n    \"width\": 8.5,\n    \"height\": 7.5,\n    \"weight\": 0.35,\n    \"shipping_base_price\": 4.75,\n    \"base_delivery_timelines\": 5\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/productservice/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productservice",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 11:23:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						}
+					],
+					"cookie": [],
+					"body": "\n{\n    \"message\": \"Successfully created the product listing\",\n    \"status\": true\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Gateway - Product Service - Get Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/productservice/product/:productId",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"productservice",
+						"product",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "f6a396e0-365f-4f72-8a9d-e5a94bbcd823"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - Product Service - Get Product",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/productservice/product/:productId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productservice",
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "456e340a-9018-463e-bc8e-c7c0d539850d"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 11:23:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "441"
+						}
+					],
+					"cookie": [],
+					"body": "\n{\n    \"data\": {\n        \"product_id\": \"456e340a-9018-463e-bc8e-c7c0d539850d\",\n        \"name\": \"Example Product\",\n        \"quantity\": 10,\n        \"type\": \"Electronics\",\n        \"category\": \"Gadgets\",\n        \"image_urls\": [\n            \"https://example.com/image1.jpg\",\n            \"https://example.com/image2.jpg\"\n        ],\n        \"price\": 99.99,\n        \"size\": {\n            \"height\": 20.75\n        },\n        \"weight\": 2.5,\n        \"shipping_base_price\": 5.5,\n        \"base_delivery_timelines\": 7,\n        \"seller_id\": \"df4191c9-d97e-4c82-a5c6-a741ecc0dc43\"\n    },\n    \"message\": \"Successfully retrieved the product\",\n    \"status\": true\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Gateway - Product Service - Get Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/productservice/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"productservice",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - Product Service - Get Products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/productservice/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productservice",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 11:23:49 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1213"
+						}
+					],
+					"cookie": [],
+					"body": "\n{\n    \"data\": [\n        {\n            \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n            \"name\": \"Wireless Headphones\",\n            \"quantity\": 50,\n            \"type\": \"Electronics\",\n            \"category\": \"Audio\",\n            \"image_urls\": [\n                \"https://example.com/headphones1.jpg\",\n                \"https://example.com/headphones2.jpg\"\n            ],\n            \"price\": 149.99,\n            \"size\": {\n                \"height\": 7.5\n            },\n            \"weight\": 0.35,\n            \"shipping_base_price\": 4.75,\n            \"base_delivery_timelines\": 5,\n            \"seller_id\": \"df4191c9-d97e-4c82-a5c6-a741ecc0dc43\"\n        },\n        {\n            \"product_id\": \"456e340a-9018-463e-bc8e-c7c0d539850d\",\n            \"name\": \"Example Product\",\n            \"quantity\": 10,\n            \"type\": \"Electronics\",\n            \"category\": \"Gadgets\",\n            \"image_urls\": [\n                \"https://example.com/image1.jpg\",\n                \"https://example.com/image2.jpg\"\n            ],\n            \"price\": 99.99,\n            \"size\": {\n                \"height\": 20.75\n            },\n            \"weight\": 2.5,\n            \"shipping_base_price\": 5.5,\n            \"base_delivery_timelines\": 7,\n            \"seller_id\": \"df4191c9-d97e-4c82-a5c6-a741ecc0dc43\"\n        },\n        {\n            \"product_id\": \"f6a396e0-365f-4f72-8a9d-e5a94bbcd823\",\n            \"name\": \"Wireless Headphones\",\n            \"quantity\": 50,\n            \"type\": \"Electronics\",\n            \"category\": \"Audio\",\n            \"image_urls\": [\n                \"https://example.com/headphones1.jpg\",\n                \"https://example.com/headphones2.jpg\"\n            ],\n            \"price\": 149.99,\n            \"size\": {\n                \"height\": 7.5\n            },\n            \"weight\": 0.35,\n            \"shipping_base_price\": 4.75,\n            \"base_delivery_timelines\": 5,\n            \"seller_id\": \"df4191c9-d97e-4c82-a5c6-a741ecc0dc43\"\n        }\n    ],\n    \"message\": \"Successfully retrieved the product\",\n    \"status\": true\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Gateway - Product Service - Update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 189.99,\n    \"quantity\": 42\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/productservice/product/:productId",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"productservice",
+						"product",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "f6a396e0-365f-4f72-8a9d-e5a94bbcd823"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - Product Service - Update Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"price\": 189.99,\n    \"quantity\": 42\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/productservice/product/:productId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productservice",
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "f6a396e0-365f-4f72-8a9d-e5a94bbcd823"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 14:18:02 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						}
+					],
+					"cookie": [],
+					"body": "\n{\n    \"message\": \"Successfully updated the product listing\",\n    \"status\": true\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Gateway - OMS - Create Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone\": \"8285013889\",\n    \"address\": {\n        \"address_line_1\": \"address_line_1\",\n        \"address_line_2\": \"address_line_2\",\n        \"city\": \"Hyderabad\",\n        \"state\": \"Telangana\",\n        \"country\": \"IN\",\n        \"zip\": \"500075\"\n    },\n    \"items\": [\n        {\n            \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n            \"quantity\": 1,\n            \"price\": 149.99\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/oms/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"oms",
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - OMS - Create Order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"8285013889\",\n    \"address\": {\n        \"address_line_1\": \"address_line_1\",\n        \"address_line_2\": \"address_line_2\",\n        \"city\": \"Hyderabad\",\n        \"state\": \"Telangana\",\n        \"country\": \"IN\",\n        \"zip\": \"500075\"\n    },\n    \"items\": [\n        {\n            \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n            \"quantity\": 1,\n            \"price\": 149.99\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/oms/order",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"oms",
+								"order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Nov 2024 15:02:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully created the product listing\",\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Gateway - OMS - Get Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/oms/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"oms",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - OMS - Get Orders",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/oms/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"oms",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Nov 2024 19:35:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1587"
+						}
+					],
+					"cookie": [],
+					"body": "\n{\n    \"data\": [\n        {\n            \"order_id\": \"257831ef-bb66-49d7-af49-a226060d7291\",\n            \"items\": [\n                {\n                    \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n                    \"quantity\": 1,\n                    \"price\": 149.99\n                }\n            ],\n            \"Address\": {\n                \"AddressLine1\": \"address_line_1\",\n                \"AddressLine2\": \"address_line_2\",\n                \"City\": \"Hyderabad\",\n                \"State\": \"Telangana\",\n                \"Country\": \"IN\",\n                \"Zip\": \"500075\"\n            },\n            \"Phone\": \"8285013889\"\n        },\n        {\n            \"order_id\": \"37975a56-4414-44ec-b721-07971bc004a6\",\n            \"items\": [\n                {\n                    \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n                    \"quantity\": 1,\n                    \"price\": 149.99\n                }\n            ],\n            \"Address\": {\n                \"AddressLine1\": \"address_line_1\",\n                \"AddressLine2\": \"address_line_2\",\n                \"City\": \"Hyderabad\",\n                \"State\": \"Telangana\",\n                \"Country\": \"IN\",\n                \"Zip\": \"500075\"\n            },\n            \"Phone\": \"8285013889\"\n        },\n        {\n            \"order_id\": \"e95d351f-6882-495a-bfb7-f056d0b98aa4\",\n            \"items\": [\n                {\n                    \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n                    \"quantity\": 1,\n                    \"price\": 149.99\n                }\n            ],\n            \"Address\": {\n                \"AddressLine1\": \"address_line_1\",\n                \"AddressLine2\": \"address_line_2\",\n                \"City\": \"Hyderabad\",\n                \"State\": \"Telangana\",\n                \"Country\": \"IN\",\n                \"Zip\": \"500075\"\n            },\n            \"Phone\": \"8285013889\"\n        },\n        {\n            \"order_id\": \"63faaa88-b92a-4ef2-83da-9dc6245bdc5b\",\n            \"items\": [\n                {\n                    \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n                    \"quantity\": 1,\n                    \"price\": 149.99\n                }\n            ],\n            \"Address\": {\n                \"AddressLine1\": \"address_line_1\",\n                \"AddressLine2\": \"address_line_2\",\n                \"City\": \"Hyderabad\",\n                \"State\": \"Telangana\",\n                \"Country\": \"IN\",\n                \"Zip\": \"500075\"\n            },\n            \"Phone\": \"8285013889\"\n        },\n        {\n            \"order_id\": \"5d7de47f-7e1f-4781-8f42-9b8ddfa81378\",\n            \"items\": [\n                {\n                    \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n                    \"quantity\": 1,\n                    \"price\": 149.99\n                }\n            ],\n            \"Address\": {\n                \"AddressLine1\": \"address_line_1\",\n                \"AddressLine2\": \"address_line_2\",\n                \"City\": \"Hyderabad\",\n                \"State\": \"Telangana\",\n                \"Country\": \"IN\",\n                \"Zip\": \"500075\"\n            },\n            \"Phone\": \"8285013889\"\n        }\n    ],\n    \"message\": \"\",\n    \"status\": true\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Gateway - OMS - Single Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/oms/order/:orderId",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"oms",
+						"order",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "6dba955a-5691-45ec-ba80-80e9a273d804"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - OMS - Single Order",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/oms/order/:orderId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"oms",
+								"order",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "6dba955a-5691-45ec-ba80-80e9a273d804"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 14:04:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "377"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"order_id\": \"6dba955a-5691-45ec-ba80-80e9a273d804\",\n        \"items\": [\n            {\n                \"product_id\": \"b34da07e-9081-4a8d-80c2-12aea0cd6e7b\",\n                \"quantity\": 1,\n                \"price\": 149.99\n            }\n        ],\n        \"Address\": {\n            \"AddressLine1\": \"address_line_1\",\n            \"AddressLine2\": \"address_line_2\",\n            \"City\": \"Hyderabad\",\n            \"State\": \"Telangana\",\n            \"Country\": \"IN\",\n            \"Zip\": \"500075\"\n        },\n        \"Phone\": \"8285013889\"\n    },\n    \"message\": \"Successfully retrieved the order\",\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Gateway - OMS - Order Status Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"Shipped\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/oms/order/:orderId",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"oms",
+						"order",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "6dba955a-5691-45ec-ba80-80e9a273d804"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gateway - OMS - Order Status Update",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"Shipped\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/oms/order/:orderId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"oms",
+								"order",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "6dba955a-5691-45ec-ba80-80e9a273d804"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 19:02:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully updated the order status\",\n    \"status\": true\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "AUTH_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJpZCI6ImRmNDE5MWM5LWQ5N2UtNGM4Mi1hNWM2LWE3NDFlY2MwZGM0MyIsInVzZXJuYW1lIjoic2VsbGVyIiwiZmlyc3RuYW1lIjoiU2VsbGVyIiwibGFzdG5hbWUiOiJBeGIiLCJ0eXBlIjoic2VsbGVyIn0sImlzcyI6ImVjb21tZXJjZS1hcHBsaWNhdGlvbiIsImV4cCI6MTczMTQzMDM4N30.2G5SrZ438cOL4qvXBAleX8wP4JQy4dDbRSt012lP_Ys"
+		}
+	]
+}
